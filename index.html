@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce Product Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/tailwind.css" />
+
+    <!-- FAVICON -->
+    <link
+      rel="shortcut icon"
+      href="./assests/icons/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-kumbh-san">
+    <div
+      class="backdrop absolute left-0 right-0 w-full h-full bg-black opacity-40 z-10 hidden"
+    ></div>
+    <!-- HEADER SECTION -->
+    <header>
+      <div
+        class="conatainer w-full px-5 py-6 flex justify-between items-center relative md:mx-auto lg:px-14 lg:py-8 xl:px-40 2xl:px-80"
+      >
+        <!-- LEFT HEADER -->
+        <div
+          class="flex items-center space-x-4 md:flex-row-reverse md:gap-x-6 lg:gap-x-10"
+        >
+          <!-- MENU ICON - FOR MOBILE DEVICES -->
+          <div class="mt-1">
+            <img
+              src="./assests/icons/icon-menu.svg"
+              alt="Menu"
+              class="md:hidden menu-open"
+            />
+
+            <!-- NAVIGATION LINKS -->
+            <nav
+              class="absolute hidden flex-col space-y-4 left-0 top-0 bg-white min-h-screen w-64 z-20 pt-20 pl-8 md:flex md:flex-row md:items-center md:bg-transparent md:pt-0 md:pl-0 md:w-fit md:z-0 md:static md:min-h-fit md:space-y-0 md:space-x-4 lg:space-x-8 menu"
+            >
+              <a
+                href="#"
+                class="font-bold text-lg md:text-sm text-dark-grayish-blue 2xl:text-lg 2xl:font-normal relative group hover:text-very-dark-blue"
+                >Collections
+
+                <!-- ON HOVER UNDERLINE -->
+                <div
+                  class="absolute left-0 w-full bg-orange h-1 top-16 hidden xl:group-hover:block"
+                ></div>
+              </a>
+              <a
+                href="#"
+                class="font-bold text-lg md:text-sm text-dark-grayish-blue 2xl:text-lg 2xl:font-normal relative group hover:text-very-dark-blue"
+                >Men
+
+                <!-- ON HOVER UNDERLINE -->
+                <div
+                  class="absolute left-0 w-full bg-orange h-1 top-16 hidden xl:group-hover:block"
+                ></div
+              ></a>
+              <a
+                href="#"
+                class="font-bold text-lg md:text-sm text-dark-grayish-blue 2xl:text-lg 2xl:font-normal relative group hover:text-very-dark-blue"
+                >Women
+
+                <!-- ON HOVER UNDERLINE -->
+                <div
+                  class="absolute left-0 w-full bg-orange h-1 top-16 hidden xl:group-hover:block"
+                ></div
+              ></a>
+              <a
+                href="#"
+                class="font-bold text-lg md:text-sm text-dark-grayish-blue 2xl:text-lg 2xl:font-normal relative group hover:text-very-dark-blue"
+                >About
+
+                <!-- ON HOVER UNDERLINE -->
+                <div
+                  class="absolute left-0 w-full bg-orange h-1 top-16 hidden xl:group-hover:block"
+                ></div
+              ></a>
+              <a
+                href="#"
+                class="font-bold text-lg md:text-sm text-dark-grayish-blue 2xl:text-lg 2xl:font-normal relative group hover:text-very-dark-blue"
+                >Contact
+                <div
+                  class="absolute left-0 w-full bg-orange h-1 top-16 hidden xl:group-hover:block"
+                ></div
+              ></a>
+              <!-- NAVIGATION CLOSE ICON -->
+              <img
+                src="./assests/icons/icon-close.svg"
+                alt="Close Menu"
+                class="absolute top-2 left-8 md:hidden menu-close"
+              />
+            </nav>
+          </div>
+          <!-- LOGO -->
+          <div>
+            <img src="./assests/logo.svg" alt="Logo" />
+          </div>
+        </div>
+
+        <!-- RIGHT HEADER -->
+        <div class="flex items-center space-x-4 xl:relative xl:space-x-12">
+          <!-- CART SECTION -->
+          <div>
+            <!-- CART ICON -->
+            <div class="hover:cursor-pointer open-cart relative">
+              <img
+                src="./assests/icons/icon-cart.svg"
+                alt="Cart"
+                class="hover:brightness-0 hover:hue-rotate-180"
+              />
+              <!-- NO. OF PRODUCT IN CART -->
+              <div
+                class="absolute -right-2 -top-2 text-xs text-white font-bold bg-orange px-2 py-0 rounded-lg hidden product-quantity-in-cart"
+              >
+                0
+              </div>
+            </div>
+            <!-- CLOSE CART WINDOW -->
+            <div
+              class="fixed left-0 top-0 bottom-0 right-0 bg-transparent hidden close-cart"
+            ></div>
+
+            <!-- CART -->
+            <div
+              class="absolute z-10 bg-white left-2 w-[calc(99%-0.8rem)] h-64 top-20 rounded-xl shadow-xl shadow-black/30 md:w-auto md:right-8 md:left-[22rem] xl:right-0 xl:-left-[19rem] hidden cart"
+            >
+              <h5 class="text-very-dark-blue font-bold mt-4 ml-6 mb-6">Cart</h5>
+              <hr />
+              <p
+                class="text-center text-dark-grayish-blue font-bold text-base mt-16 empty-cart-msg"
+              >
+                Your Cart is empty.
+              </p>
+
+              <!-- CART CONTENT -->
+              <div class="mx-6 mt-4 cart-content hidden">
+                <div
+                  class="flex items-center space-x-4 sm:justify-between md:space-x-8"
+                >
+                  <!-- PRODUCT IMAGE -->
+                  <img
+                    src="./assests/images/image-product-1-thumbnail.jpg"
+                    alt="Product Thumbnail"
+                    class="h-14 w-14 rounded-md"
+                  />
+                  <!-- PRODUCT INFO -->
+                  <div>
+                    <p class="text-dark-grayish-blue">
+                      Fall Limited Edition Sneakers
+                    </p>
+                    <div class="flex space-x-2 text-dark-grayish-blue">
+                      <div>
+                        $125.00 x
+                        <span class="product-quantity-in-cart-content">3</span>
+                      </div>
+                      <div class="text-very-dark-blue font-bold total-price">
+                        $375.00
+                      </div>
+                    </div>
+                  </div>
+                  <!-- DELETE ICON -->
+                  <img
+                    src="./assests/icons/icon-delete.svg"
+                    alt="Delete"
+                    class="w-4 h-5 delete-product-from-cart hover:cursor-pointer"
+                  />
+                </div>
+                <!-- CHECKOUT BUTTON -->
+                <div
+                  class="bg-orange mx-auto mt-6 py-4 px-6 text-center text-white font-bold rounded-xl hover:cursor-pointer"
+                >
+                  Checkout
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- AVATAR -->
+          <div
+            class="h-6 w-6 md:h-8 md:w-8 lg:w-12 lg:h-12 hover:border-2 border-orange rounded-full hover:cursor-pointer"
+          >
+            <img src="./assests/images/image-avatar.png" alt="Avatar" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <hr
+      class="hidden md:block md:w-full lg:w-3/4 mx-auto 2xl:w-[calc(100%-42rem)]"
+    />
+
+    <main
+      class="lg:container lg:px-14 lg:mx-auto xl:px-40 lg:flex lg:justify-between lg:items-center lg:space-x-6 lg:mt-36 xl:space-x-12 2xl:px-44 xl:mt-24 2xl:space-x-24"
+    >
+      <!-- PRODUCT IMAGES -->
+      <div class="">
+        <div class="relative lg:w-96 2xl:w-auto">
+          <img
+            src="./assests/images/image-product-1.jpg"
+            alt="Product 1"
+            class="w-full h-full object-contain product-image sm:h-96 lg:rounded-2xl 2xl:h-auto 2xl:w-auto not-hidden hover:cursor-pointer"
+            data-image-num="1"
+          />
+          <img
+            src="./assests/images/image-product-2.jpg"
+            alt="Product 2"
+            class="w-full h-full object-contain product-image hidden sm:h-96 lg:rounded-2xl 2xl:h-auto 2xl:w-auto hover:cursor-pointer"
+            data-image-num="2"
+          />
+          <img
+            src="./assests/images/image-product-3.jpg"
+            alt="Product 3"
+            class="w-full h-full object-contain product-image hidden sm:h-96 lg:rounded-2xl 2xl:h-auto 2xl:w-auto hover:cursor-pointer"
+            data-image-num="3"
+          />
+          <img
+            src="./assests/images/image-product-4.jpg"
+            alt="Product 4"
+            class="w-full h-full object-contain product-image hidden sm:h-96 lg:rounded-2xl 2xl:h-auto 2xl:w-auto hover:cursor-pointer"
+            data-image-num="4"
+          />
+
+          <!-- PRODUCT IMAGE NAVIGATE -->
+          <div class="xl:hidden">
+            <!-- PREVIOUS -->
+            <img
+              src="./assests/icons/icon-previous.svg"
+              alt="Prev"
+              class="prev absolute top-1/2 left-4 bg-white p-2 px-3 rounded-full"
+            />
+            <!-- NEXT -->
+            <img
+              src="./assests/icons/icon-previous.svg"
+              alt="Next"
+              class="next absolute top-1/2 right-4 bg-white p-2 px-3 rounded-full transform rotate-180"
+            />
+          </div>
+        </div>
+
+        <!-- PRODUCT THUMBNAIL -->
+        <div class="hidden xl:flex mt-8 items-center space-x-8">
+          <div class="thumbnail-div thumbnail-border">
+            <img
+              src="./assests/images/image-product-1-thumbnail.jpg"
+              alt="Product 1"
+              class="rounded-xl thumbnail-selected hover:opacity-40 hover:cursor-pointer thumbnail"
+              data-image-num="1"
+            />
+          </div>
+          <div class="thumbnail-div">
+            <img
+              src="./assests/images/image-product-2-thumbnail.jpg"
+              alt="Product 2"
+              class="rounded-xl hover:opacity-40 hover:cursor-pointer thumbnail"
+              data-image-num="2"
+            />
+          </div>
+          <div class="thumbnail-div">
+            <img
+              src="./assests/images/image-product-3-thumbnail.jpg"
+              alt="Product 3"
+              class="rounded-xl hover:opacity-40 hover:cursor-pointer thumbnail"
+              data-image-num="3"
+            />
+          </div>
+          <div class="thumbnail-div">
+            <img
+              src="./assests/images/image-product-4-thumbnail.jpg"
+              alt="Product 4"
+              class="rounded-xl hover:opacity-40 hover:cursor-pointer thumbnail"
+              data-image-num="4"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT INFO -->
+      <div class="p-6">
+        <h3 class="text-orange font-bold text-sm tracking-widest">
+          SNEAKER COMPANY
+        </h3>
+        <h1 class="text-very-dark-blue font-bold text-3xl mt-4 xl:text-5xl">
+          Fall Limited Edition Sneakers
+        </h1>
+        <p class="text-dark-grayish-blue mt-5 2xl:mt-12 2xl:text-lg">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+
+        <!-- PRODUCT PRICE -->
+        <div
+          class="flex justify-between items-center mt-6 sm:flex-col sm:justify-start sm:space-y-2 sm:items-start 2xl:mt-8"
+        >
+          <div class="flex items-center space-x-4">
+            <div class="text-very-dark-blue font-bold text-3xl">$125.00</div>
+            <div
+              class="bg-pale-orange text-orange font-bold py-0.5 px-2 rounded-md"
+            >
+              50%
+            </div>
+          </div>
+          <div class="text-grayish-blue font-bold line-through">$250.00</div>
+        </div>
+
+        <!-- PRODUCT BUY SECTION -->
+        <div
+          class="flex flex-col space-y-4 mt-6 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 2xl:mt-8"
+        >
+          <!-- NO. OF PRODUCT -->
+          <div
+            class="flex justify-between items-center bg-light-grayish-blue py-4 px-6 rounded-lg sm:w-64 lg:w-52"
+          >
+            <img
+              src="./assests/icons/icon-minus.svg"
+              alt="Increase"
+              class="decrease-product hover:cursor-pointer hover:opacity-60"
+            />
+            <div class="total-product font-bold text-very-dark-blue">0</div>
+            <img
+              src="./assests/icons/icon-plus.svg"
+              alt="Decrease"
+              class="increase-product hover:cursor-pointer hover:opacity-60"
+            />
+          </div>
+
+          <!-- ADD TO CART -->
+          <div
+            class="flex items-center justify-center space-x-4 bg-orange py-4 px-6 rounded-lg text-white sm:w-64 lg:w-52 xl:w-64 2xl:w-80 shadow-2xl shadow-orange/50 hover:cursor-pointer hover:opacity-60 add-to-cart"
+          >
+            <img
+              src="./assests/icons/icon-cart.svg"
+              alt="Cart"
+              class="brightness-0 invert"
+            />
+            <div class="font-bold">Add to cart</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div class="hidden xl:block">
+      <div
+        class="fixed top-0 left-0 right-0 bottom-0 bg-black/80 hidden lightbox"
+      >
+        <div class="h-full -w-full flex flex-col justify-center items-center">
+          <div class="w-96 h-96 2xl:w-[36rem] 2xl:h-[36rem] relative">
+            <!-- CLOSE LIGHTBOX ICON -->
+            <img
+              src="./assests/icons/icon-close.svg"
+              alt="Close"
+              class="absolute -top-10 right-0 w-6 h-6 hover:cursor-pointer brightness-0 invert lightbox-close"
+            />
+
+            <!-- LIGHTBOX PRODUCT IMAGE -->
+            <img
+              src="./assests/images/image-product-1.jpg"
+              alt="Product-1"
+              class="w-full rounded-xl lightbox-product-image hover:cursor-pointer"
+              data-image-num="1"
+            />
+
+            <!-- LIGHTBOX NEXT ICON -->
+            <img
+              src="./assests/icons/icon-previous.svg"
+              alt="Previous"
+              class="lightbox-prev absolute -left-8 top-1/2 transform -translate-y-1/2 bg-white py-5 px-6 rounded-full hover:cursor-pointer"
+            />
+
+            <!-- LIGHTBOX PREVIOUS ICON -->
+            <img
+              src="./assests/icons/icon-next.svg"
+              alt="Next"
+              class="lightbox-next absolute -right-8 top-1/2 transform -translate-y-1/2 bg-white py-5 px-6 rounded-full hover:cursor-pointer"
+            />
+          </div>
+
+          <!-- LIGHTBOX THUMBNAIL -->
+          <div class="flex items-center space-x-8 mt-7">
+            <div class="relative group lightbox-thumbnail" data-image-num="1">
+              <img
+                src="./assests/images/image-product-1-thumbnail.jpg"
+                alt="Product-1 Thumbnail"
+                class="w-24 h-24 rounded-lg"
+              />
+              <div
+                class="absolute top-[1%] left-[1%] w-[98%] h-[98%] bg-white/50 rounded-xl hover:cursor-pointer lightbox-thumbnail-backdrop hidden group-hover:block"
+              ></div>
+            </div>
+            <div class="relative group lightbox-thumbnail" data-image-num="2">
+              <img
+                src="./assests/images/image-product-2-thumbnail.jpg"
+                alt="Product-2 Thumbnail"
+                class="w-24 h-24 rounded-lg"
+              />
+              <div
+                class="absolute top-[1%] left-[1%] w-[98%] h-[98%] bg-white/50 rounded-xl hidden hover:cursor-pointer group-hover:block lightbox-thumbnail-backdrop"
+              ></div>
+            </div>
+            <div class="relative group lightbox-thumbnail" data-image-num="3">
+              <img
+                src="./assests/images/image-product-3-thumbnail.jpg"
+                alt="Product-3 Thumbnail"
+                class="w-24 h-24 rounded-lg"
+              />
+              <div
+                class="absolute top-[1%] left-[1%] w-[98%] h-[98%] bg-white/50 rounded-xl hidden hover:cursor-pointer group-hover:block lightbox-thumbnail-backdrop"
+              ></div>
+            </div>
+            <div class="relative group lightbox-thumbnail" data-image-num="4">
+              <img
+                src="./assests/images/image-product-4-thumbnail.jpg"
+                alt="Product-4 Thumbnail"
+                class="w-24 h-24 rounded-lg"
+              />
+              <div
+                class="absolute top-[1%] left-[1%] w-[98%] h-[98%] bg-white/50 rounded-xl hidden hover:cursor-pointer group-hover:block lightbox-thumbnail-backdrop"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

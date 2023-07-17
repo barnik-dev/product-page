@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .thumbnail-border {
+    @apply border-2 border-orange rounded-xl;
+  }
+
+  .thumbnail-selected {
+    @apply opacity-40;
+  }
+}
